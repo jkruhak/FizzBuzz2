@@ -5,10 +5,14 @@ $(document).ready(function(){
 		$("input#inputInteger").val("");
 	});
 
+	$("body").on("click", "#submitValue", function() {
+		runFizzBuzz();
+	});
+
 });
 
 
-function runFizzBuzz() {
+var runFizzBuzz = function() {
 
     var userInput = document.getElementById("inputInteger").value;
 

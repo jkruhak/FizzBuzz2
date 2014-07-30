@@ -1,5 +1,16 @@
+$(document).ready(function(){
+
+	$("body").on("click", "#clear", function() {
+		$("#output").empty();
+		$("input#inputInteger").val("");
+	});
+
+});
+
+
 function runFizzBuzz() {
-	var userInput = document.getElementById("inputInteger").value;
+
+    var userInput = document.getElementById("inputInteger").value;
 
 	if (userInput === "") {
 		alert("Please input a value.");
@@ -9,10 +20,11 @@ function runFizzBuzz() {
 		alert("You must input a numeric value.");
 		return false;
 	}
-	fizzBuzz();
-	return true;
+	else {
+		fizzBuzz();
+		return false;
+	}
 }
-
 
 var fizzBuzz = function (number) {
 	var inputNumber = +document.getElementById("inputInteger").value;
@@ -20,18 +32,19 @@ var fizzBuzz = function (number) {
 
 	for(var count = 1; count <= number; count++) {
 		if (count % 3 !== 0 && count % 5 !== 0) {
-			document.write(count);
+			$('#output').append('<li>' + count + '</li>');
 		} 
 
 		else if (count % 3 === 0 && count % 5 === 0){
-			document.write('fizz buzz');
+			$('#output').append('<li>' +'fizz buzz'+'</li>');
 		}
 
 		else if (count % 3 === 0) {
-			document.write('fizz');
+			$('#output').append('<li>' + 'fizz' + '</li>');
 		}	
 		else if ( count % 5 === 0 ) {
-			document.write('BUZZ');
+			$('#output').append('<li>' + 'BUZZ' + '</li>');
 		}
 	}
 }
+

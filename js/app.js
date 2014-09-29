@@ -6,19 +6,23 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#submitValue", function() {
-		runFizzBuzz();
-		$("input#inputInteger").val("");
+		submitFizzBuzz();
 	});
 
 	$("body").on("keypress", function(event) {
 		if(event.which == '13') {
 			event.preventDefault();
-			runFizzBuzz();
-			$("input#inputInteger").val("");
+			submitFizzBuzz();
 		}
 	});
 
 });
+
+var submitFizzBuzz = function() {
+	$("#output").empty();
+	runFizzBuzz();
+	$("input#inputInteger").val("");
+}
 
 
 var runFizzBuzz = function() {

@@ -7,6 +7,15 @@ $(document).ready(function(){
 
 	$("body").on("click", "#submitValue", function() {
 		runFizzBuzz();
+		$("input#inputInteger").val("");
+	});
+
+	$("body").on("keypress", function(event) {
+		if(event.which == '13') {
+			event.preventDefault();
+			runFizzBuzz();
+			$("input#inputInteger").val("");
+		}
 	});
 
 });
@@ -26,7 +35,7 @@ var runFizzBuzz = function() {
 	}
 	else {
 		fizzBuzz();
-		return false;
+		return true;
 	}
 }
 
@@ -40,7 +49,7 @@ var fizzBuzz = function (number) {
 		} 
 
 		else if (count % 3 === 0 && count % 5 === 0){
-			$('#output').append('<li>' +'fizz buzz'+'</li>');
+			$('#output').append('<li>' +'fizz BUZZ'+'</li>');
 		}
 
 		else if (count % 3 === 0) {

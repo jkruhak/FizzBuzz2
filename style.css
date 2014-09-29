@@ -1,0 +1,24 @@
+html {
+	background-color: #ABCDEF;
+}
+
+ul {
+	list-style: none;
+}
+
+#output {
+	font-size: 20px;
+}
+
+#fizzBuzz {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#inputInteger, input {
+	height: 24px;
+}
+
+#inputInteger {
+	font-size: 18px;
+}
